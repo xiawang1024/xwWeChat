@@ -1,6 +1,6 @@
 {
   "name": "hndt-wechat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/hndt-wechat.cjs.js",
   "module": "dist/hndt-wechat.esm.js",
