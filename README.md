@@ -26,7 +26,7 @@ npm run build
 
 ``` 
 //实例化，返回一个WeChat的实例
-new WeChat(appId, {title, desc, imgUrl})
+new WeChat(appId, {title, desc, imgUrl, link})
 
 ```
 
@@ -48,6 +48,7 @@ let options = {
     title: 'title',
     desc: 'desc',
     imgUrl: ''
+    link:''
 }
 let demo = new WeChat('', options)
 //实例方法
@@ -60,3 +61,5 @@ demo.share(options)
 * title: 分享标题
 * desc: 分享描述
 * imgUrl: 分享图片
+* link: 分享链接（非必填）
+
