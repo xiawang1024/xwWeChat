@@ -1,8 +1,8 @@
-import {wxSdkInit,getOriginWx,shareInit} from './utils/weixin'
-class WeChat{
-    constructor(appId,shareObj) {
+import { wxSdkInit, getOriginWx, shareInit } from './utils/weixin'
+class WeChat {
+    constructor(appId, shareObj) {
         WeChat.#sdkInit(appId)
-        shareObj &&this.share(shareObj)
+        shareObj && this.share(shareObj)
     }
 
     static #sdkInit(appId) {
@@ -13,8 +13,8 @@ class WeChat{
         return getOriginWx()
     }
 
-    share({title,desc,imgUrl}) {
-        shareInit({title,desc,imgUrl})
+    share({ title, desc, imgUrl, link }) {
+        shareInit({ title, desc, imgUrl, link })
     }
 }
 

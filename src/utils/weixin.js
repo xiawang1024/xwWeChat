@@ -5,7 +5,7 @@ export const getOriginWx = () => wx
 
 export const wxSdkInit = (appId) => {
     let url = encodeURIComponent(window.location.href)
-    let data = appId ? {url,appId} : {url}
+    let data = appId ? { url, appId } : { url }
     postData(data).then(res => {
         let { code, data } = res
         if (code === 0) {
@@ -46,8 +46,12 @@ export const wxSdkInit = (appId) => {
     })
 }
 
-export const shareInit = ({title,desc,imgUrl}) => {
-    let link = window.location.href
+export const shareInit = ({ title, desc, imgUrl, link }) => {
+    let { origin, pathname } = window.location
+    let originLink = `${origin}${pathname}`
+    if (!link) {
+        link = originLink
+    }
     wx.ready(() => {
         console.log('SDK config信息验证成功！')
         wx.updateAppMessageShareData({
@@ -55,7 +59,7 @@ export const shareInit = ({title,desc,imgUrl}) => {
             desc,
             link,
             imgUrl,
-            success:() => {
+            success: () => {
                 console.log(`“分享给朋友”及“分享到QQ”设置成功！`)
             }
         })
@@ -63,7 +67,7 @@ export const shareInit = ({title,desc,imgUrl}) => {
             title,
             link,
             imgUrl,
-            success:() => {
+            success: () => {
                 console.log(`“分享到朋友圈”及“分享到QQ空间”设置成功！`)
             }
         })
