@@ -1,14 +1,14 @@
-const BASE_URL = 'https://weizan.dianzhenkeji.com/api/jssdk.php'
+const BASE_URL = 'https://hd.hntv.tv/api/jssdk.php'
 /**
  * post Handler
  * @param {Object} data
  */
 export const postData = (data) => {
-    return fetch(BASE_URL,{
-        body:stringifyParams(data),
-        method:'POST',
-        headers:{
-            'content-type':'application/x-www-form-urlencoded; charset=UTF-8'
+    return fetch(BASE_URL, {
+        body: stringifyParams(data),
+        method: 'POST',
+        headers: {
+            'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
         }
     }).then(res => res.json())
 }
