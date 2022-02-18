@@ -35,7 +35,8 @@ export const wxSdkInit = (appId) => {
                     'scanQRCode',
                     'chooseWXPay',
                     'openProductSpecificView'
-                ]
+                ],
+                openTagList: ['wx-open-launch-app', 'wx-open-launch-weapp']
             })
             wx.error(() => {
                 console.log('SDK config信息验证失败！')
