@@ -1,3 +1,12 @@
+/*
+ * @Author: xiawang1024
+ * @Date: 2022-07-20 12:03:15
+ * @LastEditTime: 2022-07-20 12:05:02
+ * @LastEditors: xiawang1024
+ * @Description: 
+ * @FilePath: /xwWeChat/src/utils/weixin.js
+ * 工作，生活，健康
+ */
 import { postData } from './fetch'
 const wx = require('weixin-js-sdk')
 
@@ -35,7 +44,8 @@ export const wxSdkInit = (appId) => {
                     'scanQRCode',
                     'chooseWXPay',
                     'openProductSpecificView'
-                ]
+                ],
+                openTagList: ['wx-open-launch-weapp', 'wx-open-launch-app', 'wx-open-subscribe', 'wx-open-audio']
             })
             wx.error(() => {
                 console.log('SDK config信息验证失败！')
