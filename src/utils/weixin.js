@@ -12,9 +12,9 @@ const wx = require('weixin-js-sdk')
 
 export const getOriginWx = () => wx
 
-export const wxSdkInit = (appId) => {
+export const wxSdkInit = (appid) => {
     let url = encodeURIComponent(window.location.href)
-    let data = appId ? { url, appId } : { url }
+    let data = appid ? { url, appid } : { url }
     postData(data).then(res => {
         let { code, data } = res
         if (code === 0) {
